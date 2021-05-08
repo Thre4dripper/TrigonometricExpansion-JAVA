@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <ComboBox fx:id="trig_combo" layoutX="25.0" layoutY="32.0" prefHeight="26.0" prefWidth="80.0">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </ComboBox>
+   <TextField fx:id="anglefield" layoutX="115.0" layoutY="32.0" onKeyReleased="#resetSpecialChars" prefHeight="26.0" prefWidth="200.0" promptText="θ₁+θ₂+θ₃+θ₄+...+" />
+   <ComboBox fx:id="power_combo" layoutX="325.0" layoutY="31.0" prefHeight="26.0" prefWidth="115.0" promptText="-Enter Power-" />
+   <Button fx:id="alpha_btn" layoutX="115.0" layoutY="76.0" mnemonicParsing="false" onAction="#specialChars" text="α" />
+   <Button fx:id="beta_btn" layoutX="150.0" layoutY="76.0" mnemonicParsing="false" onAction="#specialChars" text="β" />
+   <Button fx:id="gamma_btn" layoutX="185.0" layoutY="76.0" mnemonicParsing="false" onAction="#specialChars" text="γ" />
+   <Button fx:id="delta_btn" layoutX="220.0" layoutY="76.0" mnemonicParsing="false" onAction="#specialChars" text="δ" />
+   <Button fx:id="theta_btn" layoutX="255.0" layoutY="76.0" mnemonicParsing="false" onAction="#specialChars" text="θ" />
+   <Button fx:id="phi_btn" layoutX="290.0" layoutY="76.0" mnemonicParsing="false" onAction="#specialChars" text="ɸ" />
+   <Button layoutX="449.0" layoutY="32.0" mnemonicParsing="false" onAction="#expression_cutter" prefHeight="26.0" prefWidth="55.0" text="Expand">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </Button>
+   <RadioButton fx:id="angle_radio" layoutX="516.0" layoutY="35.0" mnemonicParsing="false" onAction="#switch_modes" selected="true" text="Angle multiple">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+      <toggleGroup>
+         <ToggleGroup fx:id="mode" />
+      </toggleGroup>
+   </RadioButton>
+   <RadioButton fx:id="power_radio" layoutX="625.0" layoutY="36.0" mnemonicParsing="false" onAction="#switch_modes" text="Power" toggleGroup="$mode">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </RadioButton>
+   <ScrollPane layoutX="25.0" layoutY="126.0" prefHeight="75.0" prefWidth="750.0">
+      <VBox prefHeight="72.0">
+         <HBox fx:id="hbox1" />
+         <Line fx:id="upon" />
+         <HBox fx:id="hbox2" />
+      </VBox>
+   </ScrollPane>
+   <Label layoutX="631.0" layoutY="14.0" text="Switch modes" />
+   <Label layoutX="189.0" layoutY="14.0" text="Angles" textAlignment="JUSTIFY" />
+   <Label layoutX="357.0" layoutY="14.0" text="Power" />
+   <Label layoutX="25.0" layoutY="14.0" text="Function" />
+   <Label layoutX="668.0" layoutY="202.0" prefHeight="18.0" prefWidth="122.0" text="Developed by Ijlal Ahmad">
+      <font>
+         <Font name="System Bold" size="10.0" />
+      </font>
+   </Label>
+   <Label fx:id="type" layoutX="325.0" layoutY="80.0" />
+   <RadioButton fx:id="sum_radio" layoutX="690.0" layoutY="36.0" mnemonicParsing="false" onAction="#switch_modes" text="Angles Sum" toggleGroup="$mode">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </RadioButton>
+</AnchorPane>
