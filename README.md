@@ -1,0 +1,1 @@
+# TrigonometricExpansion-JAVA
